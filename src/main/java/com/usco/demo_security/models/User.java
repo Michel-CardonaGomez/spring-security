@@ -4,7 +4,9 @@ package com.usco.demo_security.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -12,9 +14,9 @@ import java.util.Set;
 @Data
 public class User {
     @Id
-    @Column(name = "user_id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_id;
+    private Long id;
 
     @Column(name = "username")
     private String username;
@@ -32,4 +34,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles;
+
+    @Transient
+    private List<Long> selectedRoleIds = new ArrayList<>();
 }

@@ -18,6 +18,11 @@
       <input type="password" id="password" name="password" class="form-control" required th:field="*{password}">
     </div>
 
+    <label>Select Roles:</label>
+    <div th:each="role : ${roles}">
+      <input type="checkbox" th:field="*{selectedRoleIds}" th:value="${role.id}">
+      <label th:text="${role.name}">Role</label>
+    </div>
     <button type="submit" class="btn btn-primary btn-block">registrarse</button>
   </form>
 </div>

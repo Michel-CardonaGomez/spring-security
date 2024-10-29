@@ -1,21 +1,18 @@
-//package com.usco.demo_security.models;
-//
-//import jakarta.persistence.Column;
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.Table;
-//
-//import java.io.Serializable;
-//import java.util.Objects;
-//
+package com.usco.demo_security.models;
+
+import jakarta.persistence.*;
+
 //@Entity
 //@Table(name = "user_roles")
-//public class User_roles implements Serializable {
+//public class User_roles {
 //
-//    @Column(name = "user_id")
-//        private Long user_id;
+//    @Id
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
 //
-//
-//    @Column(name = "role_id")
-//        Long role_id;
-//
+//    @Id
+//    @ManyToOne
+//    @JoinColumn(name = "role_id")
+//    private Role role;
 //}
